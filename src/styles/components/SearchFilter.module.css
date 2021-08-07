@@ -1,0 +1,86 @@
+.formContainer {
+    margin-top: -10px;
+    position: absolute;
+}
+
+
+.formContainer form {
+    width: 800px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 8px;
+}
+
+.filter1 {
+    min-width: 300px;
+    height: 50px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    outline: none;
+    border: none;
+    padding: 10px;
+}
+
+.filter2 {
+    width: 300px;
+    height: 50px;
+    border-top: none;
+    border-bottom: none;
+    border-left: 1px solid #DEE3ED;
+    border-right: 1px solid #DEE3ED;
+    outline: none;
+    padding: 10px;
+}
+
+.checkboxSearch {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-family: sans-serif;
+}
+
+.checkboxSearch>input {
+    height: 25px;
+    width: 25px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    border-radius: 4px;
+    outline: none;
+    transition-duration: 0.3s;
+    background-color: #DEE3ED;
+    cursor: pointer;
+}
+
+.checkboxSearch>input:checked {
+    background-color: #5964E0;
+}
+
+.checkboxSearch>input:checked+span::before {
+    content: '\2713';
+    display: block;
+    text-align: center;
+    color: #DEE3ED;
+    position: absolute;
+    left: 35.2rem;
+    top: 0.8rem;
+}
+
+.formContainer form button {
+    width: 70px;
+    height: 35px;
+    border-radius: 4px;
+    border: none;
+    background: #5964E0;
+    color: #fff;
+    cursor: pointer;
+}
+
+.formContainer form button:hover {
+    background: #6670E3;
+}

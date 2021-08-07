@@ -1,7 +1,7 @@
 .container {
     width: 100vw;
     min-height: 100vh;
-
+    background: #DEE3ED;
 }
 
 .header {
@@ -12,9 +12,20 @@
     justify-content: space-around;
 }
 
+.logo {
+    z-index: 2;
+}
+
+.sun {
+    z-index: 2;
+}
+
+.moon {
+    z-index: 2;
+}
+
 .headerBackground {
     position: absolute;
-    z-index: -1;
 }
 
 .bgSwitchContainer {
@@ -74,4 +85,10 @@ input:checked+.slider:before {
 
 .slider.round:before {
     border-radius: 50%;
+}
+
+.searchBoxContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
