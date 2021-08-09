@@ -11,7 +11,8 @@ import { useCards } from '../context/CardsContext';
 
 export default function Home() {
 
-  const [...cardsData] = useCards();
+  const [...filteredData] = useCards();
+  console.log(filteredData);
 
   return (
     <div className={styles.container}>
@@ -32,7 +33,7 @@ export default function Home() {
           <CardsContext />
         </div>
         <div className={styles.resultCardsContainer}>
-          {cardsData.map(detail => {
+          {filteredData.map(detail => {
             return (
               <Card
                 key={detail.id}
