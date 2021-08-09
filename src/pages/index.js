@@ -1,14 +1,18 @@
-import data from '../../data.json';
 import HeaderBg from '../../public/assets/desktop/bg-pattern-header.svg';
 import Logo from '../../public/assets/desktop/logo.svg';
 import Moon from '../../public/assets/desktop/icon-moon.svg';
 import Sun from '../../public/assets/desktop/icon-sun.svg';
 
 import styles from '../styles/pages/Home.module.css';
-import SearchbarFilter from '../components/SearchbarFilter';
 import Card from '../components/Card';
 
+import { CardsContext } from '../context/CardsContext';
+import { useCards } from '../context/CardsContext';
+
 export default function Home() {
+
+  const [...cardsData] = useCards();
+
   return (
     <div className={styles.container}>
       <header className={styles.header}>
@@ -25,10 +29,10 @@ export default function Home() {
       </header>
       <main>
         <div className={styles.searchBoxContainer}>
-          <SearchbarFilter />
+          <CardsContext />
         </div>
         <div className={styles.resultCardsContainer}>
-          {data.map(detail => {
+          {cardsData.map(detail => {
             return (
               <Card
                 key={detail.id}
