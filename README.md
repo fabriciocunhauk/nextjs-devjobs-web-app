@@ -3,7 +3,7 @@ This is a starter template for [Learn Next.js](https://nextjs.org/learn).
 
 # Frontend Mentor - Devjobs web app
 
-![Design preview for the Devjobs web app coding challenge](./preview.jpg)
+![Design preview for the Devjobs web app coding challenge](./public/preview.jpg)
 
 ## Welcome! 👋
 
