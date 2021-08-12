@@ -11,11 +11,11 @@ export const CardsContext = ({ children }) => {
     const [filteredData, setFilteredData] = useState([]);
 
     const handleFilter1 = (e) => {
-        setCompany(e)
+        setCompany(e);
     }
 
     const handleFilter2 = (e) => {
-        setLocation(e)
+        setLocation(e);
     }
 
     const handleFilter3 = () => {
@@ -29,42 +29,39 @@ export const CardsContext = ({ children }) => {
     const handleFilter = () => {
         let data = cardsData;
 
+        if (company !== "") {
+            data = cardsData.filter(card => card.company.toLowerCase() === company);
+            return setFilteredData(data)
+        }
 
-        // if (company !== "") {
-        //     data = data.filter(card => {
-        //         return card = company === card.company
-        //     })
-        //     console.log(data);
-        // }
-
-
-        return setFilteredData(data)
+        return setFilteredData(data);
     }
 
+    console.log(filteredData);
+
     useEffect(() => {
-        handleFilter()
-    }, [])
+        handleFilter();
+    }, []);
 
     const handleSubmit = (e) => {
         e.preventDefault();
     }
 
     return (
-        <CardsContextProvider.Provider value={filteredData}>
+        <CardsContextProvider.Provider value={{ filteredData }}>
             <div className={styles.formContainer}>
                 <form
-                    type="search"
                     onSubmit={e => handleSubmit(e)}
                 >
                     <input
                         className={styles.filter1}
-                        type="search"
+                        type="text"
                         name="search by title"
                         onChange={(e) => handleFilter1(e.target.value)}
                     />
                     <input
                         className={styles.filter2}
-                        type="search"
+                        type="text"
                         name="search by location"
                         onChange={(e) => handleFilter2(e.target.value)}
                     />
@@ -76,7 +73,7 @@ export const CardsContext = ({ children }) => {
                         />
                         <span></span>
                         <label htmlFor="fulltime"><strong>Full Time Only</strong></label>
-                        <button onClick={() => handleFilter()}>Search</button>
+                        <button onClick={handleFilter}>Search</button>
                     </div>
                 </form>
             </div>

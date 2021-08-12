@@ -11,7 +11,7 @@ import { useCards } from '../context/CardsContext';
 
 export default function Home() {
 
-  const [...filteredData] = useCards();
+  const { filteredData } = useCards();
   console.log(filteredData);
 
   return (
