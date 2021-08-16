@@ -87,12 +87,6 @@ input:checked+.slider:before {
     border-radius: 50%;
 }
 
-.searchBoxContainer {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
 .resultCardsContainer {
     display: flex;
     flex-wrap: wrap;

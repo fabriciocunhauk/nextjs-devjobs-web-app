@@ -1,8 +1,8 @@
 .formContainer {
-    margin-top: -10px;
+    margin: 130px 300px;
     position: absolute;
+    z-index: 3;
 }
-
 
 .formContainer form {
     width: 800px;

@@ -6,7 +6,6 @@ import Sun from '../../public/assets/desktop/icon-sun.svg';
 import styles from '../styles/pages/Home.module.css';
 import Card from '../components/Card';
 
-import { CardsContext } from '../context/CardsContext';
 import { useCards } from '../context/CardsContext';
 
 export default function Home() {
@@ -29,9 +28,6 @@ export default function Home() {
         </div>
       </header>
       <main>
-        <div className={styles.searchBoxContainer}>
-          <CardsContext />
-        </div>
         <div className={styles.resultCardsContainer}>
           {filteredData.map(detail => {
             return (
