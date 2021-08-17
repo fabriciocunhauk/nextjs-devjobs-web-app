@@ -12,28 +12,24 @@ export const CardsContext = ({ children }) => {
     const [fullTime, setFullTime] = useState(false);
     const [filteredData, setFilteredData] = useState([]);
 
-    const handleFilter1 = (e) => {
-        setCompany(e);
-    }
-
-    const handleFilter2 = (e) => {
-        setLocation(e);
-    }
-
-    const handleFilter3 = () => {
-        if (!fullTime) {
-            setFullTime(true);
-        } else {
-            setFullTime(false);
-        }
-    }
-
     const handleFilter = () => {
         let data = cardsData;
 
+        if (company === "" && location === "" && !fullTime) {
+            setFilteredData(cardsData);
+        }
+
         if (company !== "") {
             data = cardsData.filter(card => card.company.toLowerCase() === company);
-            return setFilteredData(data)
+        }
+
+        if (location !== "") {
+            data = cardsData.filter(card => card.location.toLowerCase() === location.toLowerCase());
+        }
+
+        if (fullTime) {
+            data = cardsData.filter(card => card.contract.toLowerCase() === "full time");
+            setFullTime(false);
         }
 
         return setFilteredData(data);
@@ -47,6 +43,7 @@ export const CardsContext = ({ children }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        e.target.reset();
     }
 
     return (
@@ -61,7 +58,7 @@ export const CardsContext = ({ children }) => {
                         type="text"
                         name="search by title"
                         placeholder="Filter by title, companies, expertise..."
-                        onChange={(e) => handleFilter1(e.target.value)}
+                        onChange={(e) => setCompany(e.target.value)}
                     />
                     <SearchLocationImage className={styles.filterImage} />
                     <input
@@ -69,14 +66,13 @@ export const CardsContext = ({ children }) => {
                         type="text"
                         name="search by location"
                         placeholder="Filter by location..."
-
-                        onChange={(e) => handleFilter2(e.target.value)}
+                        onChange={(e) => setLocation(e.target.value)}
                     />
                     <div className={styles.checkboxSearch}>
                         <input
                             type="checkbox"
                             name="full-time-part-time"
-                            onClick={handleFilter3}
+                            onChange={(e) => setFullTime(e.target.checked)}
                         />
                         <span></span>
                         <label htmlFor="fulltime"><strong>Full Time Only</strong></label>
