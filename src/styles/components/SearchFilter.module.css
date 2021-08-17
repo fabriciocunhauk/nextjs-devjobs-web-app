@@ -1,11 +1,11 @@
 .formContainer {
-    margin: 130px 300px;
+    margin: 130px 200px;
     position: absolute;
     z-index: 3;
 }
 
 .formContainer form {
-    width: 800px;
+    min-width: 800px;
     height: 50px;
     display: flex;
     align-items: center;
@@ -14,13 +14,20 @@
     border-radius: 8px;
 }
 
+.filterImage {
+    margin-left: 5px;
+}
+
 .filter1 {
     min-width: 300px;
     height: 50px;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    border-right: 1px solid #DEE3ED;
     outline: none;
-    border: none;
     padding: 10px;
 }
 
@@ -29,7 +36,7 @@
     height: 50px;
     border-top: none;
     border-bottom: none;
-    border-left: 1px solid #DEE3ED;
+    border-left: none;
     border-right: 1px solid #DEE3ED;
     outline: none;
     padding: 10px;
@@ -67,7 +74,7 @@
     text-align: center;
     color: #DEE3ED;
     position: absolute;
-    left: 35.2rem;
+    left: 41.8rem;
     top: 0.8rem;
 }
 

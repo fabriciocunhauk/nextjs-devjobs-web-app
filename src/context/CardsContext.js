@@ -1,5 +1,7 @@
 import cardsData from '../../data.json';
 import { createContext, useContext, useEffect, useState } from 'react';
+import SearchImage from '../../public/assets/desktop/icon-search.svg';
+import SearchLocationImage from '../../public/assets/desktop/icon-location.svg';
 import styles from '../styles/components/SearchFilter.module.css';
 
 const CardsContextProvider = createContext();
@@ -53,16 +55,21 @@ export const CardsContext = ({ children }) => {
                 <form
                     onSubmit={e => handleSubmit(e)}
                 >
+                    <SearchImage className={styles.filterImage} />
                     <input
                         className={styles.filter1}
                         type="text"
                         name="search by title"
+                        placeholder="Filter by title, companies, expertise..."
                         onChange={(e) => handleFilter1(e.target.value)}
                     />
+                    <SearchLocationImage className={styles.filterImage} />
                     <input
                         className={styles.filter2}
                         type="text"
                         name="search by location"
+                        placeholder="Filter by location..."
+
                         onChange={(e) => handleFilter2(e.target.value)}
                     />
                     <div className={styles.checkboxSearch}>
