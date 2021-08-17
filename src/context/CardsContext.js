@@ -14,6 +14,9 @@ export const CardsContext = ({ children }) => {
 
     const handleFilter = () => {
         let data = cardsData;
+        console.log(company);
+        console.log(fullTime);
+        console.log(fullTime);
 
         if (company === "" && location === "" && !fullTime) {
             setFilteredData(cardsData);
@@ -21,10 +24,12 @@ export const CardsContext = ({ children }) => {
 
         if (company !== "") {
             data = cardsData.filter(card => card.company.toLowerCase() === company);
+            setCompany("");
         }
 
         if (location !== "") {
             data = cardsData.filter(card => card.location.toLowerCase() === location.toLowerCase());
+            setLocation("");
         }
 
         if (fullTime) {
