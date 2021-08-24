@@ -14,33 +14,28 @@ export const CardsContext = ({ children }) => {
 
     const handleFilter = () => {
         let data = cardsData;
-        console.log(company);
-        console.log(fullTime);
-        console.log(fullTime);
 
         if (company === "" && location === "" && !fullTime) {
             setFilteredData(cardsData);
         }
 
         if (company !== "") {
-            data = cardsData.filter(card => card.company.toLowerCase() === company);
+            data = data.filter(card => card.company.toLowerCase() === company);
             setCompany("");
         }
 
         if (location !== "") {
-            data = cardsData.filter(card => card.location.toLowerCase() === location.toLowerCase());
+            data = data.filter(card => card.location.toLowerCase() === location.toLowerCase());
             setLocation("");
         }
 
         if (fullTime) {
-            data = cardsData.filter(card => card.contract.toLowerCase() === "full time");
+            data = data.filter(card => card.contract.toLowerCase() === "full time");
             setFullTime(false);
         }
 
         return setFilteredData(data);
     }
-
-    console.log(filteredData);
 
     useEffect(() => {
         handleFilter();
