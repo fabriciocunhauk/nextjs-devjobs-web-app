@@ -3,13 +3,13 @@ import React from 'react';
 
 import styles from '../styles/components/Card.module.css';
 
-const Card = ({ logo, bgColor, postedAt, contract, position, company, location }) => {
+const Card = ({ logo, bgColor, postedAt, contract, position, company, location, theme }) => {
     return (
         <div>
             <div style={{ background: bgColor }} className={styles.logoContainer}>
                 <img src={logo} alt="company logo" />
             </div>
-            <div className={styles.cardContainer}>
+            <div className={theme ? `${styles.cardContainer} ${styles.cardContainerDark}` : styles.cardContainer}>
                 <p>{postedAt} • {contract}</p>
                 <h4>{position}</h4>
                 <p>{company}</p>

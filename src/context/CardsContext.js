@@ -1,10 +1,15 @@
-import cardsData from '../../data.json';
 import { createContext, useContext, useEffect, useState } from 'react';
 import SearchImage from '../../public/assets/desktop/icon-search.svg';
 import SearchLocationImage from '../../public/assets/desktop/icon-location.svg';
 import styles from '../styles/components/SearchFilter.module.css';
 
+import cardsData from '../../data.json';
+
 const CardsContextProvider = createContext();
+
+export function useCards() {
+    return useContext(CardsContextProvider);
+};
 
 export const CardsContext = ({ children }) => {
     const [company, setCompany] = useState("");
@@ -84,7 +89,3 @@ export const CardsContext = ({ children }) => {
         </CardsContextProvider.Provider>
     );
 }
-
-export function useCards() {
-    return useContext(CardsContextProvider);
-};

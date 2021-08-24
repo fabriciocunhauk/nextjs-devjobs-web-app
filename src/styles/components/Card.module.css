@@ -9,6 +9,10 @@
     background: #fff;
 }
 
+.cardContainerDark {
+    background: #3a3b3d;
+}
+
 .cardContainer p {
     margin: 15px 0px;
     color: #81858f;
